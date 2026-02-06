@@ -2,63 +2,288 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CareTech Hospital | Smart ERP</title>
+    <title>CareTech Hospital ERP System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #20c997;
+            --light-bg: #f4f8fb;
+            --dark: #212529;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--light-bg);
+            color: var(--dark);
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            display: inline-block;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 500;
+        }
+
+        nav a.btn {
+            background: var(--secondary);
+            padding: 8px 14px;
+            border-radius: 4px;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(
+                rgba(13,110,253,0.7),
+                rgba(13,110,253,0.7)
+            ),
+            url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3") center/cover no-repeat;
+            color: white;
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--secondary);
+            padding: 12px 22px;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        /* CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .card span {
+            font-size: 36px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* ERP DASHBOARD */
+        .dashboard {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                float: none;
+                margin-top: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header class="topbar">
+<!-- HEADER -->
+<header>
     <div class="container">
-        <h1 class="logo">CareTech Hospital</h1>
+        <h1>CareTech Hospital</h1>
         <nav>
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#departments">Departments</a>
-            <a href="erp.html">ERP System</a>
-            <a href="login.html" class="btn">ERP Login</a>
+            <a href="#erp">ERP</a>
+            <a href="#contact" class="btn">Contact</a>
         </nav>
     </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <div class="container">
-        <h2>Smart Hospital Management with CareTech ERP</h2>
-        <p>Integrated ERP system for patients, billing, pharmacy, HR and hospital operations</p>
-        <a href="login.html" class="btn primary">Access ERP</a>
+        <h2>Hospital ERP Management System</h2>
+        <p>
+            CareTech Hospital ERP is a modern hospital management system
+            designed to manage patients, doctors, billing, pharmacy,
+            inventory, and hospital operations efficiently.
+        </p>
+        <a href="#erp" class="btn">View ERP Dashboard</a>
     </div>
 </section>
 
-<section id="about" class="section">
+<!-- ABOUT -->
+<section id="about">
     <div class="container">
         <h2>About CareTech Hospital</h2>
-        <p>
-            CareTech Hospital is a modern healthcare facility powered by digital ERP solutions
-            to provide efficient, secure, and patient-centric healthcare services.
+        <p style="text-align:center; max-width:800px; margin:auto;">
+            CareTech Hospital is a technology-driven healthcare organization
+            providing high-quality medical services. Our ERP system integrates
+            all hospital departments into a single secure platform.
         </p>
     </div>
 </section>
 
-<section id="services" class="section gray">
-    <div class="container grid">
-        <div class="card">24/7 Emergency</div>
-        <div class="card">Outpatient Services</div>
-        <div class="card">Diagnostic Laboratory</div>
-        <div class="card">In-house Pharmacy</div>
+<!-- SERVICES -->
+<section id="services">
+    <div class="container">
+        <h2>Hospital Services</h2>
+        <div class="grid">
+            <div class="card"><span>🧑‍⚕️</span>Outpatient Department</div>
+            <div class="card"><span>🏥</span>Inpatient Services</div>
+            <div class="card"><span>💊</span>Pharmacy Management</div>
+            <div class="card"><span>🧪</span>Laboratory Services</div>
+            <div class="card"><span>💳</span>Billing & Finance</div>
+            <div class="card"><span>📦</span>Inventory Control</div>
+        </div>
     </div>
 </section>
 
-<section id="departments" class="section">
-    <div class="container grid">
-        <div class="card">Cardiology</div>
-        <div class="card">Orthopedics</div>
-        <div class="card">Neurology</div>
-        <div class="card">Pediatrics</div>
+<!-- ERP DASHBOARD -->
+<section id="erp">
+    <div class="container">
+        <h2>ERP Dashboard (Demo)</h2>
+
+        <div class="grid">
+            <div class="card"><span>🧑‍⚕️</span>Total Patients<br><strong>1,248</strong></div>
+            <div class="card"><span>👨‍⚕️</span>Doctors<br><strong>56</strong></div>
+            <div class="card"><span>🏥</span>Departments<br><strong>12</strong></div>
+            <div class="card"><span>💰</span>Daily Revenue<br><strong>$18,400</strong></div>
+        </div>
+
+        <div class="dashboard">
+            <h3>Recent Patients</h3>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Ali Khan</td>
+                    <td>Cardiology</td>
+                    <td>Admitted</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Sara Ahmed</td>
+                    <td>Neurology</td>
+                    <td>Discharged</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Usman Malik</td>
+                    <td>Orthopedics</td>
+                    <td>Under Treatment</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </section>
 
-<footer class="footer">
-    <p>© 2026 CareTech Hospital | Powered by ERP Technology</p>
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p style="text-align:center;">
+            📍 CareTech Hospital, Pakistan<br>
+            📞 +92 300 1234567<br>
+            ✉️ info@caretechhospital.com
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 CareTech Hospital ERP System | All Rights Reserved</p>
 </footer>
 
 </body>
