@@ -156,6 +156,7 @@ section h2 {
 
 /* TABLE */
 
+/* TABLE STYLING */
 .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -164,18 +165,31 @@ section h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
+    min-width: 650px;
 }
 
 th {
     background: var(--primary);
     color: white;
     padding: 12px;
+    text-align: left;
 }
 
 td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
+}
+
+/* Mobile improvement */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
 
 /* ================= FOOTER ================= */
